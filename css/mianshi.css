@@ -1,0 +1,29 @@
+*{
+	font-family: "微软雅黑";
+}
+.part{
+	width: 80%;
+	border: 1px solid #66ffff;
+	margin: 10px auto;
+}
+.part .question{
+	cursor: pointer;
+}
+.part .question:hover{
+	color: #3399ff;
+}
+.part .answer{
+	display: none;
+}
+.part .answer li{
+	line-height: 24px;
+}
+.part .answer li pre{
+	background: #e6e6e6;
+}
+.line{
+	width: 60%;
+	margin: 10px;
+	height: 1px;
+	background: #000;
+}

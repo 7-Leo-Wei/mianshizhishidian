@@ -1,0 +1,2239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>前端知识点</title>
+	<link rel="stylesheet" href="css/mianshi.css">
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	
+</head>
+<body>
+	<div class="part">
+		<h3 class="question"></h3>
+		<ol class="answer">
+			<li></li>
+		</ol>
+	</div>
+
+
+	<h1>front-end-frame-relative</h1>
+	<div class="part">
+		<h3 class="question">react-router路由系统的实现原理？</h3>
+		<ol class="answer">
+			<li>实现原理：location与components之间的同步；</li>
+			<li>路由的职责是保证UI和URL的同步；</li>
+			<li>在react-router中，URL对应Location对象，UI由react components决定；</li>
+			<li>因此路由在react-router中就转变成location与components之间的同步。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">React是什么？</h3>
+		<ol class="answer">
+			<li>React不是MV*框架，用于构建用户界面的JavaScript库，侧重于View层；</li>
+			<li>
+				React主要的原理：
+				<ul>
+					<li>虚拟DOM+diff算法->不直接操作DOM对象；</li>
+					<li>Components组件->virtual DOM的节点；</li>
+					<li>State触发试图的渲染->单向数据绑定；</li>
+					<li>React解决方案：React+Redux+react-router+Fetch+webpack。</li>
+				</ul>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">AngularJS是什么？</h3>
+		<ol class="answer">
+			<li>AngularJS是一个完善的前端MVVM框架，包含模板、数据双向绑定、路由、模块化、服务、依赖注入等；</li>
+			<li>AngularJS是Google维护，用来协助大型单一页面应用开发。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">backbone是什么？</h3>
+		<ol class="answer">
+			<li>Backbone是一个基于jQuery和underscore的前端（MVC）框架。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">MVC？MVP？MVVM？Flux？</h3>
+		<ol class="answer">
+			<li>
+				MVC（model-View-Controller）：
+				<ul>
+					<li>V->C，C->M，M->V</li>
+					<li>通信是单项的，C只起路由作用，业务逻辑都部署在V；</li>
+					<li>Backbone。</li>
+				</ul>
+			</li>
+			<li>
+				MVP（model-View-Presenter）：
+				<ul>
+					<li>V<->P，P<->M</li>
+					<li>通信都是双向的，V和M不发生联系（通过P传递），V非常薄，逻辑都部署在P；</li>
+					<li>Riot.js</li>
+				</ul>
+			</li>
+			<li>
+				MVVM（Model-View-ViewModel）：
+				<ul>
+					<li>V->VM，VM<->M</li>
+					<li>采用双向数据绑定，View和ViewModel的变动都会互相隐射到对象上面。</li>
+					<li>AngularJS、Vue.js</li>
+				</ul>
+			</li>
+			<li>
+				Flux（Dispatcher-Store-View）：
+				<ul>
+					<li>Action->Dispatcher->Store->View，View->Action</li>
+					<li>Facebook为了解决在MVC应用中碰到的工程性问题提出一个构架思想；</li>
+					<li>基于一个简单的原则：数据在应用中单向流动（单向数据流）；</li>
+					<li>React（Flux中View，只关注表现层）。</li>
+				</ul>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">类库和框架的区别？</h3>
+		<ol class="answer">
+			<li>类库是一些函数的集合，帮助开发者写WEB应用，起主导作用的是开发者的代码；</li>
+			<li>框架是以实现的特殊WEB应用，开发者只需对他填充具体的业务逻辑，起主导作用的是框架。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">Webpack是什么？优势？</h3>
+		<ol class="answer">
+			<li>Webpack是一款模块加载器兼打包工具，用于把各种静态资源（js/css/image等）作为模块来使用。</li>
+			<li>
+				优势：
+				<ul>
+					<li>Webpack同时支持commonJS、AMD/CMD，方便代码迁移；</li>
+					<li>不仅能模块化JS，还包括CSS/image等；</li>
+					<li>能替代部分Grunt/Gulp工作，如打包、压缩混淆、图片base64等；</li>
+					<li>扩展性强，插件机制完善，特别是支持React热插播等功能。</li>
+				</ul>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">Yeoman是什么？</h3>
+		<ol class="answer">
+			<li>Yeoman：前端开发脚手架工具，自动将最佳实践和工具整合起来构建项目骨架；</li>
+			<li>
+				Yeoman其实是三类工具的合体，三类工具各自独立：
+				<ul>
+					<li>yo：脚手架：自动生成工具（相当于一个粘合剂，把Yeoman工具粘合在一起）；</li>
+					<li>Grunt、Gulp：自动化构建工具（最初只有Grunt，之后加入gulp）</li>
+					<li>Bower、npm：包管理工具（原来是bower，之后加入了npm）。</li>
+				</ul>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">前端工程化？</h3>
+		<ol class="answer">
+			<li>前端工程化就是把一整套前端工作流程使用工具自动化完成。</li>
+			<li>
+				前端开发基本流程：
+				<ul>
+					<li>项目初始化：yeoman，FIS；</li>
+					<li>引入依赖包：bower，npm；</li>
+					<li>模块化管理：npm，browserify，Webpack；</li>
+					<li>代码编译：babel、sass，less；</li>
+					<li>代码优化（压缩、合并）：Gulp，Grunt；</li>
+					<li>代码检查：JSHint，ESLint；</li>
+					<li>代码测试：Mocha。</li>
+				</ul>
+			</li>
+			<li>目前最知名的构建工具：Gulp，Grunt，npm+Webpack。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">设计模式：什么是singleton、factory、strategy、decorator？</h3>
+		<ol class="answer">
+			<li>Singleton（单例）：一个类只有唯一实例，这个实例在整个程序中有一个全局的访问点；</li>
+			<li>Factory（工厂）：解决实例化对象产生重复的问题；</li>
+			<li>Strategy（策略）：将每一个算法封装起来，使它们还可以相互替换，让算法独立使用；</li>
+			<li>Observer（观察者）：多个观察者同时监听一个主体，当主体对象发送改变时，不同的类还是可以协同工作；</li>
+			<li>Prototype（原型）：一个完成初始化的实例，用于拷贝或者克隆；</li>
+			<li>Adapter（适配器）：将不同类的接口进行匹配调整，尽管内部接口不兼容，不同的类还是可以协同工作；</li>
+			<li>Proxy（代理模式）：一个充当过滤转发的对象用来代表一个真实的对象；</li>
+			<li>Iterator（迭代器）：在不需要知道集合内部工作原理的情况下，顺序访问一个集合里面的元素；</li>
+			<li>Chain of Responsibility（职责链）：处理请求组成的对象一条链，请求链中传递，知道有对象可以处理。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">依赖注入？</h3>
+		<ol class="answer">
+			<li>当一个类的实例依赖另一个类的实例时，自己不创建该实例，由IOC容器创建并注入给自己，因此称为依赖注入；</li>
+			<li>依赖注入解决的就是如何有效组织代码依赖模块的问题。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">什么是函数柯里化（Currying）？</h3>
+		<ol class="answer">
+			<li>柯里化：通常也称部分求值，含义是给函数分布传递参数，每次传参部分应用参数，并返回一个更具体的函数，继续接受剩余参数。期间会连续返回具体函数，直至返回最后结果。因此，函数柯里化是逐步传参，逐步缩小函数的使用范围，逐步求解的过程。</li>
+			<li>作用：延迟计算，参数复用，动态创建函数。</li>
+			<li>缺点：会产生开销（函数嵌套，比普通函数占更多内存），但性能瓶颈首先来自其他原因（DOM操作等）。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">什么是函数式编程？</h3>
+		<ol class="answer">
+			<li>函数式编程是一种编程范式，主要思想是把运算过程尽量写成一系列嵌套的函数调用；</li>
+			<li>例如：var result = subtract(multiply(add(1,2),3),4);</li>
+			<li>
+				函数式编程的特点：
+				<ul>
+					<li>函数核心化：函数可以作为变量的赋值、另一函数的参数、另一函数的返回值；</li>
+					<li>只用表达式，不用语句：要求每一步都是单纯的运算，都必须有返回值；</li>
+					<li>没有副作用：所有功能只为返回一个新的值，不修改外部变量；</li>
+					<li>引用透明：运行不依赖外部变量，只依赖于输入的参数；</li>
+				</ul>
+			</li>
+			<li>
+				函数式编程的优点：
+				<ul>
+					<li>代码简介，接近自然语言，易于理解；</li>
+					<li>便于维护，利于测试、出错、组合；</li>
+					<li>易于并发编程，不用担心一个线程的数据，被另一个线程修改；</li>
+					<li>可热升级代码，在运行状态下直接升级代码，不需要重启，也不需要停机。</li>
+				</ul>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">移动端的点击事件的延迟时间是多长，为什么会有延迟，如何解决？</h3>
+		<ol class="answer">
+			<li>移动端click有300ms延迟，为了浏览器区分双击（放大页面）还是单击而设计；</li>
+			<li>
+				解决方法：
+				<ul>
+					<li>禁用缩放（对Safari无效）</li>
+					<li>使用指针事件（IE私有特性，且仅IE10+）；</li>
+					<li>使用Zepto的tap事件（有点透BUG）</li>
+					<li>使用fastclick插件（体积大）</li>
+				</ul>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">移动端最小触控区域是多大？</h3>
+		<ol class="answer">
+			<li>44*44px</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">什么是webkit？</h3>
+		<ol class="answer">
+			<li>Webkit是一个开源的浏览器内核，由渲染引擎（WebCore）和js解析引擎（JSCore）组成；</li>
+			<li>通常所说的Webkit是指Webkit（WebCore），主要工作是进行HTML/CSS渲染；</li>
+			<li>Webkit是Safari和Chrome（以前版本）使用的浏览器内核，后来Chrome改用blink内核。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">什么是npm？</h3>
+		<ol class="answer">
+			<li>npm是node.js的模块管理和发布工具。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">如何判断当前脚本运行在浏览器还是node环境中？</h3>
+		<ol class="answer">
+			<li>判断global对象是否为window，如果不是，当前脚本没有运行在浏览器中。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">Node.js特点？优缺点？应用场景？</h3>
+		<ol class="answer">
+			<li>特点：单线程，非阻塞I/O，事件驱动；</li>
+			<li>优点：擅长处理高并发，适合I/O密集型应用；</li>
+			<li>缺点：不适合CPU密集运算，不能充分利用多核CPU，可靠性低，某个环节出错会导致整个系统崩溃；</li>
+			<li>
+				应用场景：
+				<ul>
+					<li>RESTful API</li>
+					<li>实时应用：在线聊天、图文直播；</li>
+					<li>工具类应用：前端部署（npm、gulp）；</li>
+					<li>表单收集，问卷系统。</li>
+				</ul>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">requireJS的核心原理是？</h3>
+		<ol class="answer">
+			<li>每个模块所依赖模块都会比本模块预先加载。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">AMD和CMD规范的区别</h3>
+		<ol class="answer">
+			<li>
+				规范化产出：
+				<ul>
+					<li>AMD由requireJS推广产出</li>
+					<li>CMD由seaJS推广产出</li>
+				</ul>
+			</li>
+			<li>
+				模块的依赖：
+				<ul>
+					<li>AMD提前执行，推崇依赖前置</li>
+					<li>CMD延迟执行，推崇依赖就近</li>
+				</ul>
+			</li>
+			<li>
+				API功能：
+				<ul>
+					<li>AMD的API默认多功能（分全局require和局部require）；</li>
+					<li>CMD的API推崇职责单一纯粹（没有全局require）；</li>
+				</ul>
+			</li>
+			<li>
+				模块定义规则：
+				<ul>
+					<li>AMD默认一开始就载入全部依赖模块</li>
+					<li>CMD依赖模块在用到时才就近载入</li>
+				</ul>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">通行的JavaScript模块的规范有哪些？</h3>
+		<ol class="answer">
+			<li>CommonsJS——主要用在服务器端node.js</li>
+			<li>AMD（异步模块定义）——require.js</li>
+			<li>CMD（通用模块定义）——sea.js</li>
+			<li>ES6模块</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">模块化开发怎么做？</h3>
+		<ol class="answer">
+			<li>封装对象作为命名空间：内部状态可以被外部改写；</li>
+			<li>立即执行函数（IIFE）：需要依赖多个js文件，并且严格按顺序加载；</li
+				<li> 使用模块加载器：require.js、sea.js、ES6模块。</li>>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">前端路由？</h3>
+		<ol class="answer">
+			<li>前端路由是通过URL和History来实现页面切换；</li>
+			<li>应用：主要适用于前后端分离的单页面应用（SPA）项目；</li>
+			<li>优点：用户体验号，交互流畅；</li>
+			<li>缺点：浏览器前进、后退会重新请求，无法合理利用缓存。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">单页面应用（SPA）</h3>
+		<ol class="answer">
+			<li>定义：是指用户在浏览器加载单一的HTML页面，后续请求都无需再离开此页；</li>
+			<li>目标：旨在作为用户提供更接近本地移动APP或桌面应用程序的体验；</li>
+			<li>流程：第一次请求时，将导航传输到客户端，其余请求通过REST API获取JSON数据；</li>
+			<li>实现：数据的传输通过Web Socket API或RPC（远程过程调用）；</li>
+			<li>优点：用户体验流程、服务器压力小，前后端职责分离；</li>
+			<li>缺点：关键词布局难度加大，不利于SEO。</li>
+		</ol>
+	</div>
+
+
+
+
+	<h1>HTTP部分</h1>
+	<div class="part">
+		<h3 class="question">七层模型？</h3>
+		<ol class="answer">
+			<li>物理层：通过媒介传输比特，确定机械及电气规范（比特Bit）；</li>
+			<li>数据链路程，将比特组装成帧和点到点的传递（帧Frame）；</li>
+			<li>网络层：负责数据包从源到宿的传递和网际互联（包Packet）；</li>
+			<li>传输层：提供端到端的可靠报文传递和错误恢复（段Segment）；</li>
+			<li>会话层：建立、管理和终止会话（会话协议数据单元SPDU）；</li>
+			<li>表示层：对数据进行翻译、加密和压缩（表示协议数据单元PPDU）；</li>
+			<li>应用层：允许访问OSI环境的手段（应用协议数据单元APDU）。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">GET和POST的区别？</h3>
+		<ol class="answer">
+			<li>GET：一般用于信息获取，使用URL传递参数，对所发送新系的数量也有限制，一般在2000个字符；</li>
+			<li>POST：一般用于修改服务器上的资源，对所发送的信息没有限制；</li>
+			<li>GET需要使用Request.QueryString来取得变量的值，而POST方式通过Request.Form来获取变量的值，也就是说GET是通过地址栏的传值，而POST是通过提交表来传值；</li>
+			<li>
+				以下情况要使用POST请求：
+				<ol>
+					<li>无法使用缓存文件（更新服务器上的文件或数据库）；</li>
+					<li>向服务器发送大量数据（POST没有数据量限制）；</li>
+					<li>发送包含未知字符的用户输入时，POST比GET更加稳定也更可靠。</li>
+				</ol>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">一个页面从输入URL到页面加载显示完成，过程发生了什么？</h3>
+		<ol class="answer">’
+			<li>
+				简洁版：
+				<ol>
+					<li>浏览器根据请求的URL交给DNS域名解析，找到真实IP，向服务器发起请求；</li>
+					<li>服务器交给后台处理完成后返回数据，浏览器接收文件（HTML/CSS/JS/图像等）；</li>
+					<li>浏览器对加载到的资源进行语法解析，建立相应的内部数据结构（如DOM）；</li>
+					<li>载入解析到的资源文件，渲染页面，完成。</li>	
+				</ol>	
+			</li>
+			<li>
+				详细版：
+				<ol>
+					<li>浏览器查找域名对应的IP地址（DNS查询：浏览器缓存->系统缓存->路由器缓存->ISP DNS缓存->根域名服务器）；</li>
+					<li>浏览器想Web服务器发送一个HTTP请求（TCP三次握手）；</li>
+					<li>服务器301重定向（从http://example.com重定向到http://www.example.com）；</li>
+					<li>浏览器跟踪重定向地址，请求另一个带www的地址；</li>
+					<li>服务器处理请求（通过路由读取资源）；</li>
+					<li>服务器返回一个HTTP响应（报头把Content-type设置为'text/html'）；</li>
+					<li>浏览器进行DOM树构建；</li>
+					<li>浏览器发送请求获取嵌在HTML中的资源（如图片、音频、css、js等）；</li>
+					<li>浏览器显示完成页面；</li>
+					<li>浏览器发送异步请求。</li>
+				</ol>
+			</li>
+			
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">HTTP状态码分类</h3>
+		<ol class="answer">
+			<li>1**：信息，服务器收到请求，需要请求者继续执行操作；</li>
+			<li>2**：成功，操作被成功接收并处理；</li>
+			<li>3**：重定向，需要进一步的操作以完成请求；</li>
+			<li>4**：客户端错误，请求包含语法错误或无法完成请求；</li>
+			<li>5**：服务器错误，服务器在处理请求的过程中发生了错误。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">常见HTTP状态码？</h3>
+		<ol class="answer">
+			<li>100：continue，继续，一般在发送POST请求时，已发送了http header之后服务端将返回此信息，表示确认，之后发送具体参数信息；</li>
+			<li>200：OK，正常返回信息；</li>
+			<li>201：created，请求成功并且服务器创建了新的资源；</li>
+			<li>202：accepted，服务器已接收请求，但尚未处理；</li>
+			<li>301：moved permanently，请求的网页已永久移动到新的位置；</li>
+			<li>302：found，临时性重定向；</li>
+			<li>303：see other，临时性重定向，且总是使用get请求信的url；</li>
+			<li>304：not modified，自从上次请求后，请求的网页未修改过；</li>
+			<li>400：bad request，服务器无法理解请求的格式，客户端不应当尝试再次使用相同的内容发起请求；</li>
+			<li>401：unanthorized，请求未授权；</li>
+			<li>403：forbidden，禁止访问；</li>
+			<li>404：not found，找不到如何与URL相匹配的资源；</li>
+			<li>500：internal server error，最常见的服务端错误；</li>
+			<li>503：service unavailable，服务端暂时无法处理请求（可能过载或维护）。</li>
+		</ol>
+	</div>
+
+
+
+	<h1>AJAX部分</h1>
+	<div class="part">
+		<h3 class="question">什么是AJAX？</h3>
+		<ol class="answer">
+			<li>AJAX：asynchronous JavaScript and xml，异步JavaScript和xml在后台与服务器进行异步数据交换，不用重载整个页面，实现局部刷新。</li>
+			<li>
+				创建步骤：
+				<ol>
+					<li>创建XMLHttpRequest对象；</li>
+					<li>创建一个新的HTTP请求，并制定该HTTP请求的类型、验证信息；</li>
+					<li>设置响应HTTP请求状态变化的回调函数；</li>
+					<li>发送HTTP请求；</li>
+					<li>获取异步调用返回的数据；</li>
+					<li>使用JavaScript和DOM实现局部刷新。</li>
+				</ol>
+			</li>
+			<li>
+				<pre>
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST",url,true);
+	xhr.setRequestHeader("content-type", "application/x-www-form-urlencode");
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 304){
+			fn.call(this,xhr.responseText);
+		}
+	}
+	xhr.send(data);
+				</pre>
+			</li>
+		</ol>
+	</div>
+
+
+
+	<h1>jQuery部分</h1>
+	<div class="part">
+		<h3 class="question">jQuery.extend与jQuery.fn.extend的区别？</h3>
+		<ol class="answer">
+			<li>$.fn.extend和$.extend是jQuery为扩展插件提供了两个方法；</li>
+			<li>
+				$.extend(object);   //为jQuery添加静态方法（工具方法）
+				<pre>
+	$.extend({
+		min:function(a,b){return a < b?a:b;},
+		max:function(a,b){return a > b?a:b;}
+	})
+	$.min(2,3);    //2
+	$.max(4,5);    //5
+				</pre>
+			</li>
+			<li>
+				$.fn.extend(json);  //为jQuery添加成员函数（实例方法）
+				<pre>
+	$.fn.extend({
+		alertValue:function(){
+			$(this).click(function(){
+				alert($(this).val());
+			})
+		}
+	});
+				</pre>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">jq的属性拷贝（extend）的实现原理是什么，如何实现深拷贝？</h3>
+		<ol class="answer">
+			<li>
+				浅拷贝（只赋值一份原始对象的引用）：
+				<pre>
+	var newObject = $.extend({},oldObject);
+				</pre>
+			</li>
+			<li>
+				深拷贝（对原始对象属性所引用的对象进行递归拷贝）：
+				<pre>
+	var newObject = $.extend(true,{},oldObject);
+				</pre>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">jq中的bind()、live()、delegate()、on()的区别？</h3>
+		<ol class="answer">
+			<li>bind直接绑定在目标元素上；</li>
+			<li>live通过冒泡传播事件，默认document上，支持动态数据；</li>
+			<li>delegate更精确的小范围使用代理，性能优于live；</li>
+			<li>on是最新的1.9版本综合了之前的三种方式。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">jq中如何将数组转化为json字符串，再转化回来？</h3>
+		<ol class="answer">
+			<li>
+				通过原生JSON.stringify/JSON.parse扩展jq实现
+				<pre>
+	$.array2json = function(array){
+		return JSON.stringify(array);
+	}
+	$.json2array = function(array){
+		//return parseJSON(array);    //3.0开始已过时
+		return JSON.parse(array);
+	}
+	var json = $.array2json(['a','b','c']);
+	var array = $.json2array(json);
+				</pre>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">jq一个对象可以同时绑定多个事件，如何实现？</h3>
+		<ol class="answer">
+			<li>
+				<pre>
+	$('#btn').on("mouseover mouseout",func);				
+				</pre>
+			</li>
+			<li>
+				<pre>
+	$("#btn").on({
+		mouseover:func1,
+		mouseout:func2,
+		click:func3
+	})
+				</pre>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">针对jq的优化方法</h3>
+		<ol class="answer">
+			<li>缓存频繁操作DOM对象；</li>
+			<li>尽量使用ID选择器代替class选择器；</li>
+			<li>总是从#id选择器来继承；</li>
+			<li>尽量使用链式操作；</li>
+			<li>使用事件委托on绑定事件；</li>
+			<li>采用jq的内部函数data()来存储数据；</li>
+			<li>使用最新版本的jq。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">jq的slideUp动画，当鼠标快速连续触发，动画会滞后反复执行，该如何处理？</h3>
+		<ol class="answer">
+			<li>在触发元素上设置延迟处理，使用JS原生setTimeout方法；</li>
+			<li>在触发的事件时预先停止所有的动画，再执行相应的动画事件：$(".tab").stop().slideUp();</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">jqUI如何自定义组件？</h3>
+		<ol class="answer">
+			<li>通过向$.widget()传递组件名称和一个原型对象来完成；</li>
+			<li>$.widget("ns.wedgetName",[baseWidget],widgetPrototype);</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">jQuery与jQueryUI、jQueryMobile区别</h3>
+		<ol class="answer">
+			<li>jQuery是JS库，兼容各种pc浏览器，主要用作更方便的处理DOM、事件、动画、AJAX等；</li>
+			<li>jQueryUI是建立在jQuery库上的一组用户界面交互、特效、小部件及主题；</li>
+			<li>jQueryMobile以jQuery为基础，用于创建移动web应用的框架。</li>
+		</ol>
+	</div>
+
+
+	<h1>JavaScript部分</h1>
+	<div class="part">
+		<h3 class="question">对象生命周期的理解？</h3>
+		<ol class="answer">
+			<li>创建一个对象时，JavaScript会自动为该对象分配适当的内存；</li>
+			<li>垃圾回收器定期扫描对象，并计算引用该对象的其他对象的数量；</li>
+			<li>如果被引用数量为0；或唯一引用是循环，那么该对象的内存即可回收。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">列举一下JavaScript数组和对象有哪些原生方法</h3>
+		<ol class="answer">
+			<li>
+				数组：
+				<ol>
+					<li>连接多个数组：arr.concat(arr1,arr2,arrn);</li>
+					<li>把数组元素组成字符串：arr.join(",");</li>
+					<li>以func方式排列数组：arr.sort(func);</li>
+					<li>删除数组最后一个元素：arr.pop();</li>
+					<li>数组末尾添加新的元素：arr.push()</li>
+					<li>删除数组的第一个元素：arr.shift();</li>
+					<li>在数组开头添加新元素：arr.unshift();</li>
+					<li>数组元素顺序反转：arr.reverse();</li>
+					<li>数组中选取元素：arr.slice(start,end);</li>
+					<li>数组的指定位置添加元素：arr.splice(pos,num,ele1,ele2);</li>
+					<li>删除指定位置指定数量的元素：arr.splice(pos,num);</li>
+					<li>数组转化为字符串：arr.toString();</li>
+				</ol>
+			</li>
+			<li>
+				对象：
+				<ol>
+					<li>检测对象是否含有prop属性：obj.hasOwnProperty(prop);</li>
+					<li>检测对象的prop属性是否可以枚举：obj.propertyIsEnumerable(prop);</li>
+					<li>返回原始值：obj.valueOf();</li>
+					<li>对象转换为字符串：obj.toString();</li>
+				</ol>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">JavaScript调用函数有哪几种方式？</h3>
+		<ol class="answer">
+			<li>方法调用模式：Foo.foo(arg1,arg2);</li>
+			<li>函数调用模式：foo(arg1,arg2);</li>
+			<li>构造器调用模式：(new Foo())(arg1,arg2);</li>
+			<li>call/apply调用模式：Foo.foo.call(that,arg1,arg2);</li>
+			<li>bind调用模式：Foo.foo.bind(that)(arg1,arg2)();</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">求一段字符串的字节长度（一个英文字符占一个字节，一个中文字符占两格字节）</h3>
+		<ol class="answer">
+			<li>
+				<pre>
+	function getBytes(str){
+		var len = str.length;
+		var bytes = len;
+		for (var i = 0; i < str.length; i++) {
+			if (str.charCodeAt(i)>255) {
+				bytes++;
+			}
+		}
+		alert(bytes);
+	}
+
+				</pre>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">把&lt;script&gt;放在&lt;/body&gt;之前和之后有什么区别？浏览器如何解析？</h3>
+		<ol class="answer">
+			<li>按照HTML标准，在&lt;/body&gt;结束后出现&lt;script&gt;或任何元素的开始标签，都是解析错误；</li>
+			<li>虽然不符合HTML标准，但浏览器会自动容错，使实际效果与写在&lt;/body&gt;之前没有区别；</li>
+			<li>浏览器的容错机制会忽略&lt;script&gt;之前的&lt;/body&gt;，视作&lt;script&gt;仍在body体内。</li>
+			<li>省略&lt;/body&gt;和&lt;/html&gt;闭合标签符合HTML标准，服务器可以利用这一标准尽可能少输出内容。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">页面编码和被请求的资源编码如果不一样如何处理？</h3>
+		<ol class="answer">
+			<li>后端响应头设置charset；</li>
+			<li>前端页面&lt;meta&gt;设置charset。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">attribute和property的区别？</h3>
+		<ol class="answer">
+			<li>attribute是dom元素在文档中作为html标签拥有的属性，值只能是字符串；</li>
+			<li>property就是dom元素在js中作为对象拥有的属性；</li>
+			<li>对于html的标准属性来说，attribute和property是同步的，会自动更新；</li>
+			<li>对于自定义的属性来说，是不同步的。</li>
+			<li>
+				在jQuery中区别attribute()和prop()：
+				<ol>
+					<li>对于HTML元素本身就带有的固有属性，在处理时，使用prop()；</li>
+					<li>对于HTML元素我们自己自定义的DOM属性，在处理时，使用attr方法。</li>
+					<li>具有true和false两个属性的属性，如checked、selected、disabled等，使用prop()。</li>
+				</ol>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">如何删除一个cookie</h3>
+		<ol class="answer">
+			<li>
+				设置expires参数为以前的时间即可，如：
+				<pre>
+	document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 GMT";		
+				</pre>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">严格模式的限制？</h3>
+		<ol class="answer">
+			<li></li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">JavaScript的同源策略？</h3>
+		<ol class="answer">
+			<li>概念：同源策略是客户端脚本（尤其是JavaScript）的重要的安全度量标准，它最早出自Netscape Navigator2.0，其目的是防止某个文档或脚本从多个不同源装载。这里的同源策略是指：协议、域名、端口相同，同源策略是一种安全协议；</li>
+			<li>指一段脚本只能读取来自统一来源的窗口和文档的属性。</li>
+			<li>作用：防止脚本内容、客户信息等泄漏；</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">设计模式？</h3>
+		<ol class="answer">
+			<li>
+				工厂模式：
+				<ol>
+					<li>主要好处是可以消除对象间的耦合，通过使用工程方法而不是new关键字，将所有实例化的代码集中在一个位置防止代码重复；？</li>
+					<li>工厂模式解决了重复实例化的问题电视还有一个问题就是识别问题，无法搞清楚到底是哪个对象的实例。</li>
+				</ol>
+				<pre>
+	function createObj(name,age,profession){
+		var obj = new Object();
+		obj.name = name;
+		obj.age = age;
+		obj.profession = profession;
+		obj.introduce = function(){
+			console.log(this.name + ' at ' + this.age + ' engaged in ' + this.profession);
+		}
+		return obj;
+	}
+	var test1 = createObj("Mark",36,"Programmer");
+	test1.introduce();					
+				</pre>
+			</li>
+			<li>
+				构造函数模式：解决了重复实例化的我那天，又解决了对象识别的问题，该模式与工厂模式的不同之处在于：
+				<ol>
+					<li>构造函数方法没有显示的创建对象（new Object()）；</li>
+					<li>直接将属性和方法赋值给this对象；</li>
+					<li>没有return语句。</li>
+				</ol>
+				<pre>
+	function CreateObj(name,age,profession){
+		this.name = name;
+		this.age = age;
+		this.profession = profession;
+		this.introduce = function(){
+			console.log(this.name + ' at ' + this.age + ' engaged in ' + this.profession);
+		}
+	}
+	var test1 = new CreateObj("Jerry",34,"programmer");
+	test1.introduce();					
+				</pre>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">引用计数（reference counting）</h3>
+		<ol class="answer">
+			<li>在低版本IE中经常会出现内存泄漏，很多时候就是因为其采用了引用计数方式进行垃圾回收。引用计数的策略是跟踪记录每个值被使用的次数，当声明一个变量并将一个引用类型赋值给该变量的时候，这个值的引用次数就加1.如果该变量的值变成了另外一个，则这个值的引用次数减1，当这个值的引用次数变为0的时候，说明没有变量在使用，这个值没法被访问了，因此可以将其占用的空间回收，这样垃圾回收器会在运行的时候清理掉引用次数为0的值占用的空间。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">JavaScript垃圾回收的方法</h3>
+		<ol class="answer">
+			<li>标记清除（Mark and sweep）</li>
+			<li>当变量进入执行环节的时候，比如函数中表明一个变量，垃圾回收器将其标记为进入环境，当变量离开环境的时候（函数执行结束）将其标记为离开环境；</li>
+			<li>垃圾回收器会在运行的时候给存储在内存中的所有变量加上标记，然后去掉环境中的变量以及被环境中变量所引用的变量（闭包），在这些完成后仍存在标记的就是要删除的变量。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">渐进增强和优雅降级</h3>
+		<ol class="answer">
+			<li>渐进增强：针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到最好的用户体验。</li>
+			<li>优雅降级：一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">哪些操作会造成内存泄漏？</h3>
+		<ol class="answer">
+			<li>内存泄漏是指任何对象在您不再拥有或需要它之后仍然存在，导致占用的内存不能使用或回收。</li>
+			<li>垃圾回收机制定期扫描对象，并计算引用了每个对象的其他对象的数量。如果一个对象的引用数量为0（没有其他对象引用过该对象），或对该对象的唯一引用是循环的，那么该对象的内存即可回收。</li>
+			<li>
+				泄漏操作：
+				<ol>
+					<li>未使用var 声明全局变量；</li>
+					<li>闭包、控制台日志、循环引用（两个对象相互引用）会引起内存泄漏。</li>
+					<li>移除存在绑定事件的DOM元素（IE）。</li>
+				</ol>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">DOM操作——添加、移除、移动、复制、创建、查找节点</h3>
+		<ol class="answer">
+			<li>
+				创建节点：
+				<ol>
+					<li>创建一个DOM片段：createDocumentFragment();</li>
+					<li>创建一个具体的元素：createElement();</li>
+					<li>创建一个文本节点：createTextNode();</li>
+				</ol>
+			</li>
+			<li>
+				查找：
+				<ol>
+					<li>通过标签名称：getElementsByTagName();</li>
+					<li>通过元素的Name属性的值（包括id等于name的值的节点）：getElementsByName();</li>
+					<li>getElementById();</li>
+				</ol>
+			</li>
+			<li>添加：appendChild();</li>
+			<li>移除：removeChild();</li>
+			<li>替换：replaceChild();</li>
+			<li>已有节点前插入新的节点：insertBefore();</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">document.write和innerHTML的区别</h3>
+		<ol class="answer">
+			<li>document.write只能重绘整个页面；</li>
+			<li>innerHTML只重绘相对应的DOM节点内容。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">同步和异步的区别？</h3>
+		<ol class="answer">
+			<li>同步：浏览器访问服务器请求，用户看得到页面刷新，重新发请求，等请求完，页面刷新，新内容出现，用户看到新内容，进行下一步操作；</li>
+			<li>异步：浏览器访问服务器请求，用户正常操作，浏览器后端进行请求，等请求完，页面不刷新，新内容也会出现，用户看到新内容。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">Ajax是什么，如何创建一个Ajax？</h3>
+		<ol class="answer">
+			<li>AJAX：Asynchronous JavaScript And XML（异步传输JS和XML）</li>
+			<li>所谓异步就是：向服务器发送请求的时候，我们不必等待结果，而是可以同时做其他的事情，等到有了结果，它自己会根据设定进行后续操作，与此同时，页面是不会发送整页刷新的，提高了用户体验。</li>
+			<li>
+				原生JS创建一个AJAX：
+				<pre>
+	var xmlhttp;
+	if (window.XMLHttpRequest) {
+		//IE7+,ff,chrome,opera.safari等现代浏览器兼容
+		xmlhttp = new XMLHttpRequest();
+	}else{
+		//IE6及以下
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange = function(){
+		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+			//....后续执行代码
+		}
+	}
+	xmlhttp.open("GET",url,true);  
+	//url为获取数据的文件，自行设置，字符串格式
+	xmlhttp.send();
+				</pre>
+			</li>
+			<li>
+				jQuery创建一个ajax请求：
+				<pre>
+	$.ajax({
+		url: 'http://192.168.2.100:8653/js/studentsInfo.json',
+		type: 'POST',
+		dataType: 'json',
+	})
+	.done(function(result){    //result为返回的json数据
+		//执行代码
+	})
+	.fail(function() {
+		console.log("error");
+	})
+	.always(function() {
+		console.log("complete");
+	});
+				</pre>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">js延迟加载的方式有哪些？</h3>
+		<ol class="answer">
+			<li>
+				H5以下页面设置defer(针对外部脚本文件)：
+				<pre>
+	&lt;script src="test.js" defer="defer"&gt;&lt;/script&gt;
+				</pre>
+			</li>
+			<li>
+				H5页面设置async(针对外部脚本文件)：
+				<pre>
+	&lt;script src="test.js" async&gt;&lt;/script&gt;
+				</pre>
+			</li>
+			<li>
+				在代码底部，&lt;/body&gt;前动态创建DOM方式加载js外部脚本：
+				<pre>
+	&lt;script type="text/javascript"&gt;
+		function downloadJSAtOnload(){
+			var element = document.createElement("script");
+			element.src = "jsDoc.js";    //jsDoc.js为需要加载的外部js脚本
+			document.body.appendChild(element);
+		}
+		if (window.addEventListener) {
+			window.addEventListener("load",downloadJSAtOnload,false);
+		}else if (window.attachEvent) {
+			window.attachEvent("onload",downloadJSAtOnload);
+		}else{
+			window.onload = downloadJSAtOnload;
+		}
+	&lt;/script&gt;				
+				</pre>
+			</li>
+			<li>把js外部引入的文件放在页面底部，来让js最后引入，从而加快加载速度。</li>
+			<li>延迟加载工具：LazyLoad</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">如何判断一个对象是否属于某个类？</h3>
+		<ol class="answer">
+			<li>
+				使用instanceof：
+				<pre>
+	if(a instanceof Person){
+		alert("true");
+	}					
+				</pre>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">严格模式的限制？</h3>
+		<ol class="answer">
+			<li>变量必须声明后再使用；</li>
+			<li>函数的参数不能有同名属性，否则报错；</li>
+			<li>不能使用with语句</li>
+			<li>不能对只读属性赋值，否则报错</li>
+			<li>不能使用前缀0表示八进制数，否则报错</li>
+			<li>不能删除不可删除的属性，否则报错</li>
+			<li>不能删除变量delete prop，会报错，支持删除属性delete globel[prop]；</li>
+			<li>eval不会在它的外层作用域引入变量；</li>
+			<li>eval和arguments不能被重新赋值；</li>
+			<li>arguments不会自动反映函数参数的变化；</li>
+			<li>不能使用arguments.callee；</li>
+			<li>不能使用arguments.caller；</li>
+			<li>禁止this指向全局对象</li>
+			<li>不能使用fn.caller和fn.arguments获取函数调用的堆栈；</li>
+			<li>增加了保留字（prototype/static/interface等）</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">JavaScript代码中的"use strict";是什么意思，有什么作用？</h3>
+		<ol class="answer">
+			<li>"use strict";是一种ECMAScript5添加的严格运行模式，这种模式使得JavaScript在更加严格的条件下运行，使JS编码更加规范化的模式，消除JavaScript语法的一些不合理、不严谨之处，减少一些怪异行为。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">什么是闭包（closure）？为什么要用闭包？</h3>
+		<ol class="answer">
+			<li>闭包是指有权访问另一个函数作用域中变量的函数，创建闭包的常见方式就是在一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量，利用闭包可以突破作用域链。</li>
+			<li>
+				闭包特性：
+				<ol>
+					<li>函数内再嵌套函数；</li>
+					<li>内部函数可以引用外层的参数和变量；</li>
+					<li>参数和变量不会被垃圾回收机制回收。</li>
+				</ol>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">事件委托？</h3>
+		<ol class="answer" id="answer">
+			<li>利用冒泡的原理，把事件加到父元素或祖先元素上，在冒泡时触发执行。</li>
+			<li>
+				优点：
+				<ol>
+					<li>提高JavaScript性能，提高事件的处理速度，减少内存的占用。</li>
+					<li>动态添加DOM元素，不需要因为元素的改动而修改事件绑定。</li>
+				</ol>
+			</li>
+			<li>
+				示例：
+				<pre>
+	var answer = document.getElementById("answer");
+	answer.addEventListener("click",function(event){
+		var target = event.target;
+		var li = answer.getElementsByTagName("li");
+		for (var i = 0; i < li.length; i++) {
+			if (target == li[i]) {
+				alert(li[i].innerHTML);
+			}
+			
+		}
+	})
+				</pre>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">事件监听？</h3>
+		<ol class="answer">
+			<li>使用ele.addEventListener(event,function,useCapture)（现代浏览器）或者ele.attachEvent(event,function)（IE8及以下）来为DOM绑定事件。</li>
+			<li>
+				ele.addEventListener(event,function,useCapture)：
+				<ol>
+					<li>event：必需，事件名，支持所有DOM事件，前面不加on；</li>
+					<li>function：必需，事件触发的函数名</li>
+					<li>useCapture：可选，指定事件是否在捕获或者冒泡阶段执行，true，捕获，false，冒泡。默认false。</li>
+					<li>解除绑定：ele.removeEventListener(event,function)</li>
+				</ol>
+			</li>
+			<li>
+				ele.attachEvent(event,function)：
+				<ol>
+					<li>event：必需，事件名，支持所有DOM事件，前面要加on；</li>
+					<li>function：必需，事件触发的函数名</li>
+					<li>解除绑定：ele.detachEvent(event,function)</li>
+				</ol>
+			</li>
+			<li>优点：可同时绑定多个事件</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">null和undefined的区别</h3>
+		<ol class="answer">
+			<li>undefined表示不存在这个值，是一个表示无的原始值或者说表示缺少值，就是此处应该有一个值，但是没有定义。例如变量被声明了，但是没有赋值，就返回undefined。</li>
+			<li>null表示一个对象被定义了，值为空。</li>
+			<li>在验证null时，要使用“===”，因为“==”无法分辨null和undefined。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">JavaScript创建对象的几种方式</h3>
+		<ol class="answer">
+			<li>
+				对象字面量的方式：
+				<pre>
+	var Person = {
+		firstname:"Mark",
+		lastname:"Yun",
+		age:25,
+		introduce:function(){
+			alert('I am ' + this.firstname + ' ' + this.lastname + ',I am ' + + this.age + '.');
+		}
+	}					
+				</pre>
+			</li>
+			<li>
+				用function来模拟无参的构造函数：
+				<pre>
+	function Person(){
+		var person = new Person();    //定义一个function，如果使用new实例化，该function可以看做是一个Class
+		person.name = "Mark";
+		person.age = "26";
+		person.work = function(){
+			alert(person.name + "hello...");
+		}
+	}
+	person.work();					
+				</pre>
+			</li>
+			<li>
+				用function来模拟有参构造函数来实现（用this关键字定义构造的上下文属性）：
+				<pre>
+	function Person(name,age){
+		this.name = name;
+		this.age = age;
+		this.introduce = function(){
+			alert(this.name+"今年"+this.age+"岁。");
+		}
+	}		
+	var person = new Person("Jerry",35);
+	person.introduce();			
+				</pre>
+			</li>
+			<li>
+				用原型方式创建：
+				<pre>
+	function Dog(){
+
+	}
+	Dog.prototype.name = "旺财";
+	Dog.prototype.eat = function(){
+		alert(this.name+"是个吃货。");
+	}
+	var wangcai = new Dog();
+	wangcai.eat();					
+				</pre>
+			</li>
+			<li>
+				混合方式创建：
+				<pre>
+	function Car(name,price){
+		this.name = name;
+		this.price = price;
+	}
+	Car.prototype.sell = function(){
+		alert("这个车是"+this.name+",现在卖"+this.price+"万元");
+	}
+	var Tiger = new Car("Tiger",6);
+	Tiger.sell();					
+				</pre>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">call和apply的应用场景</h3>
+		<ol class="answer">
+			<li>对象间的函数调用。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">web开发中会话跟踪的方法有哪些？</h3>
+		<ol class="answer">
+			<li>cookie</li>
+			<li>sessionStorage</li>
+			<li>url重写</li>
+			<li>隐藏input</li>
+			<li>ip地址</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">new操作符具体做了什么？</h3>
+		<ol class="answer">
+			<li>创建实例对象，this变量引用该对象，同时还继承了构造函数的原型；</li>
+			<li>属性和方法被加入到this引用的对象中；</li>
+			<li>新创建的对象由this所引用，并且最后隐式的返回this。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">如何获取一个DOM元素的绝对位置？</h3>
+		<ol class="answer" onclick="showPos(event)">
+			<li>ele.offsetLeft：返回元素相对于其定位父元素左侧的距离；</li>
+			<li>ele.offsetTop：返回元素相对于其定位父元素顶部的距离；</li>
+			<li>ele.getBoundingClientRect()：返回一个DOMRect对象，包含一组描述边框的只读属性，单位像素。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">区分什么是客户区坐标、页面坐标、屏幕坐标</h3>
+		<ol class="answer">
+			<li>客户区坐标：鼠标指针在可视区中的水平坐标（clientX）和垂直坐标（clientY）；</li>
+			<li>页面坐标：鼠标指针在页面布局中的水平坐标（pageX）和垂直坐标（pageY）；</li>
+			<li>屏幕坐标：设备物理屏幕的水平坐标（screenX）和垂直坐标（screenY）。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">函数节流？应用场景和原理？</h3>
+		<ol class="answer">
+			<li>函数节流（throttle）是指阻止一个函数在很短时间间隔内连续调用。只有当上一次函数执行后达到规定的时间间隔，才能进行下一次调用。但是要保证一个累计最小调用间隔（否则拖拽类的节流都将无连续效果）。</li>
+			<li>函数节流用于onresize、onscroll等段时间内会多次触发的事件；</li>
+			<li>函数节流的原理：使用定时器做时间节流。当触发一个事件时，先用setTimeout让这个事件延迟一小段时间再执行，如果在这个时间间隔内又触发了事件，就clearTimeout原来的定时器，再setTimeout一个新的定时器重复以上流程。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">W3C事件的target和currentTarget的区别？</h3>
+		<ol class="answer">
+			<li>target只会出现在事件流的目标阶段</li>
+			<li>currentTarget可能出现在事件流的任何阶段</li>
+			<li>当事件流处在目标阶段时，二者的指向相同</li>
+			<li>当事件流处于捕获或者冒泡阶段时：currentTarget指向当前事件活动的对象（一般为父级）</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">IE的事件处理和W3C的事件处理的区别？</h3>
+		<ol class="answer">
+			<li>
+				<p>绑定事件</p>
+				<p>W3C：targetEle.addEventListener('click',handler,false);</p>
+				<p>IE：targetEle.attachEvent('onclick',handler);</p>
+			</li>
+			<li>
+				<p>删除事件</p>
+				<p>W3C：targetEle.removeEventListener('click',handler,false);</p>
+				<p>IE：targetEle.detachEvent(event,handler);</p>
+			</li>
+			<li>
+				<p>事件对象</p>
+				<p>W3C：var a = arguments.caller.caller.arguments[0];</p>
+				<p>IE：window.event</p>
+			</li>
+			<li>
+				<p>事件目标</p>
+				<p>W3C：e.target</p>
+				<p>IE：window.event.srcElement</p>
+			</li>
+			<li>
+				<p>阻止事件默认行为</p>
+				<p>W3C：e.preventDefault()</p>
+				<p>IE：window.event.returnValue = false</p>
+			</li>
+			<li>
+				<p>阻止事件传播</p>
+				<p>W3C：e.stopPropagation();</p>
+				<p>IE：window.event.cancelBubble = true;</p>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">事件的代理/委托</h3>
+		<ol class="answer">
+			<li>事件委托是指将事件绑定到目标元素的父元素上，利用冒泡机制触发该事件；</li>
+			<li>优点：可以减少事件注册，节省内存占用；可以将事件应用于动态添加的子元素上。</li>
+			<li>缺点：使用不当会造成事件在不该触发时触发。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">何为冒泡？何为捕获？</h3>
+		<ol class="answer">
+			<li>
+				冒泡：父、子元素同时绑定同一事件，不管执行函数是否相同，子元素执行完事件后，父元素继续执行父元素绑定的事件，直到最高一层绑定相同事件的父元素。
+			</li>
+			<li>
+				捕获：顺序与冒泡相反，效果相同，事件从父元素向子元素传递。
+			</li>
+			<li>
+				<p>阻止捕获和冒泡的方法：需要停止捕获或冒泡的函数传入参数：“event”，函数内最后添加语句：event.stopPropagation();或event.stopImmediatePropagation();</p>
+				<p>区别：event.stopPropagation();只会阻止冒泡或者捕获；event.stopImmediatePropagation();不仅阻止了捕获和冒泡，还阻止了该元素其他事件。</p>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">在一个DOM上同时绑定两个点击事件，一个用捕获一个用冒泡，事件会执行几次，先执行冒泡还是捕获？</h3>
+		<ol class="answer">
+			<li>该DOM上的事件如果被触发，会执行两次；</li>
+			<li>如果该DOM是目标元素，则按事件绑定顺序执行，不区分冒泡还是捕获；</li>
+			<li>如果该DOM是处于事件流中的非目标元素，则先执行捕获，后执行冒泡。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">介绍事件捕获和冒泡执行顺序和事件的执行次数</h3>
+		<ol class="answer">
+			<li>安装W3C标准的事件：首先进入捕获阶段，直到达到目标元素，再进入冒泡阶段；</li>
+			<li>事件执行次数（DOM2-addEventListener）：元素上绑定事件的个数，绑定几次执行几次；</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">事件的三个阶段</h3>
+		<ol class="answer">
+			<li>捕获、目标、冒泡</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">什么是document对象？</h3>
+		<ol class="answer">
+			<li>document对象是HTML文档的根节点与所有其他节点（元素节点、文本节点、属性节点、注释节点）；</li>
+			<li>document对象事我们可以通过脚本对HTML页面中的所有元素进行访问；</li>
+			<li>document对象是window对象的一部分，可以通过window.document属性对其进行访问。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">什么是window对象？</h3>
+		<ol class="answer">
+			<li>window对象是表示浏览器的窗口，是JavaScript的顶级对象；</li>
+			<li>window对象的方法和属性是在全局范围内有效的。</li>
+			<li>我们创建的所有对象、函数、变量都是window对象的成员。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">eval是做什么的，什么特点？</h3>
+		<ol class="answer">
+			<li>eval的功能时把对应的字符串解析成JS代码并运行；</li>
+			<li>应该避免使用eval，不安全，非常消耗性能（先解析成js语句，再执行）；</li>
+			<li>由JSON字符串转换为JSON对象的时候可以用eval('('+str+')');</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">this对象的理解</h3>
+		<ol class="answer">
+			<li>this总是指向函数的直接调用者；</li>
+			<li>如果有new关键字，this指向new出来的实例对象；</li>
+			<li>在事件中，this指向触发这个事件的对象；</li>
+			<li>IE下attachEvent中的this总是指向全局对象window。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">JavaScript作用域链？</h3>
+		<ol class="answer">
+			<li>全局函数无法查看局部函数的内部细节，但是局部函数可以查看其上层的函数细节，直至全局细节；</li>
+			<li>如果当前作用域没有找到属性或方法，会向上层作用域查找，直至全局函数，这种形式就是作用域链。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">如何实现继承？</h3>
+		<ol class="answer">
+			<li>构造函数绑定：使用call或者apply方法，将父对象的构造函数绑定在子对象上；</li>
+			<li>实例继承：将子对象的prototype指向父对象的一个实例；</li>
+			<li>拷贝继承：把父对象的所有属性和方法，拷贝进子对象；</li>
+			<li>原型继承：将子对象的prototype指向父对象的prototype；</li>
+			<li>ES6语法糖extends：class ColorPoint extends Point{}</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">JavaScript如何实现一个类？怎么实例化这个类？</h3>
+		<ol class="answer">
+			<li>
+				<p>构造函数法（this+prototype）：用new关键字生成实例对象；</p>
+				<p>缺点：用到了this和prototype，编写复杂，可读性差；</p>
+				<button onclick="showHuawei()">showHuawei()</button>
+				<pre>
+	function Mobile(name,price){
+		this.name = name;
+		this.price = price;
+	}
+	Mobile.prototype.sell = function(){
+		alert(this.name+"售价￥"+this.price);
+	};
+	var huawei = new Mobile("Honor 6X",1266);
+	huawei.sell();
+				</pre>
+			</li>
+			<li>
+				<p>Object.create法：用Object.create()生成实例对象；</p>
+				<p>缺点：不能实现私有属性和私有方法，实例对象之间不能共享数据；</p>
+				<button onclick="showPsn_1()">showPsn_1()</button>
+				<pre>
+	var Person = {
+		firstname:"Mark",
+		lastname:"Yun",
+		age:25,
+		introduce:function(){
+			alert('I am ' + this.firstname + ' ' + this.lastname + ',I am ' + + this.age + '.');
+		}
+	}
+	var person_1 = Object.create(Person);
+	person_1.introduce();
+				</pre>
+				<p>个人修改：可以传值设置；</p>
+				<button onclick="showPsn_2()">showPsn_2()</button>
+				<button onclick="newPsn()">newPsn()</button>
+				<pre>
+	function crtPerson(fname,lname,age){
+		var Person = {
+			firstname:fname,
+			lastname:lname,
+			age:age,
+			introduce:function(){
+				alert('I am ' + this.firstname + ' ' + this.lastname + ',I am ' + + this.age + '.');
+			}
+		}	
+		return Person;
+	}
+	var person_1 = Object.create(crtPerson("Jerry","Lee",26));
+	person_1.introduce();
+				</pre>
+				<p>
+					浏览器要求IE9+，低版本需做自行部署。
+				</p>
+				<pre>
+	if (!Object.create) {
+		Object.create = function(o){
+			function F(){};
+			F.prototype = o;
+			return new F();
+		}
+	};
+				</pre>
+			</li>
+			<li>
+				<p>极简主义法（消除this和prototype）：调用createNew()得到实例对象；</p>
+				<p>优点：容易理解，结构清晰优雅，符合传统的面向对象编程的构造。</p>
+				<button onclick="newCat()">newCat()</button>
+				<pre>
+	var Cat = {
+		age:3,    //共享数据部分，定义在类对象中，createNew()外
+		createNew:function(){
+			var cat = {};
+			cat.name = "小米";
+			var sound = "喵喵喵";  // 私有属性，定义在createNew()内，输出对象外
+			cat.makeSound = function(){
+				alert(Cat.age+'的'+this.name+sound);   // 暴露私有属性
+			}
+			cat.changeAge = function(num){
+				Cat.age = num;   //修改共享数据
+			}
+			return cat;  //输出对象
+		}
+	}
+	var cat_1 = Cat.createNew();
+	cat_1.makeSound();
+				</pre>
+			</li>
+			<li>
+				<p>ES6语法糖class：用new关键字生成实例对象</p>
+				<button onclick="newPint()">newPint()</button>
+				<pre>
+	class Point{
+		constructor(x,y){
+			this.x = x;
+			this.y = y;
+		}
+		toString(){
+			return '('+this.x+','+this.y+')';
+		}
+	}
+	var point = new Point(2,3);
+				</pre>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">值的类型？</h3>
+		<ol class="answer">
+			<li>原始数据类型：undefined、null、number、string、Boolean，创建在栈内存中；</li>
+			<li>引用数据类型：Array、object、function，创建在堆内存中；</li>
+			<li>
+				区别：；
+				<ol>
+					<li>创建存储的位置不同（栈内存和堆内存）</li>
+					<li>原始数据类型是直接存储在栈（stack）中的简单数据段，占据空间小，大小固定，属于被频繁使用数据；</li>
+					<li>引用数据类型是存储在堆（heap）中的对象，占据空间大，大小不固定，如果存储在栈中，将会影响程序运行的性能；</li>
+					<li>引用数据类型在栈中存储了指针，该指针指向堆中该实体的起始地址；</li>
+					<li>当解释器寻找引用值时，会首先检索其在栈中的地址，取得地址后从堆中获得实体。</li>
+				</ol>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">原型？原型链？特点？</h3>
+		<ol class="answer">
+			<li>
+				原型：
+				<ol>
+					<li>JavaScript的所有对象中都包含一个[proto]内部属性，这个属性所对应的就是该对象的原型；</li>
+					<li>JavaScript的函数对象，除了原型[proto]外，还预置了prototype属性；</li>
+					<li>当函数对象作为构造函数创建实例时，该prototype属性值将被作为实例对象的原型[proto]</li>
+				</ol>
+			</li>
+			<li>
+				原型链：
+				<ol>
+					<li>当一个对象调用的属性/方法自身不存在时，就会去自己[proto]关联的前辈prototype对象上去找；</li>
+					<li>如果没找到，就会去该prototype原型[proto]关联的前辈prototype去找，以此类推，直到找到属性/方法或undefined为止，从而形成了所谓的“原型链”。</li>
+				</ol>
+			</li>
+			<li>
+				原型特点：JavaScript对象是通过引用来传递的，当修改原型时，与之相关的对象也会继承这一改变。
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">解释JavaScript中的作用域与变量声明提升</h3>
+		<ol class="answer">
+			<li>
+				作用域：
+				<ol>
+					<li>在Java、C等语言中，作用域为for语句、if语句或{}内的一块区域，称为作用域；</li>
+					<li>在JavaScript中，作用域为funct(){}内的区域，称为函数作用域。</li>
+				</ol>
+			</li>
+			<li>
+				变量声明提升：
+				<ol>
+					<li>在JavaScript中，函数声明与变量声明经常被JavaScript引擎隐式的提升到当前作用域的顶部；</li>
+					<li>声明语句中的赋值部分并不会被提升，只有名称被提升；</li>
+					<li>函数声明的优先级高于变量，如果变量名跟函数名相同且为赋值，则函数声明会覆盖变量声明；</li>
+					<li>如果函数有多个同名函数，那么最后一个参数（即使没有定义）会覆盖前面的同名参数。</li>
+				</ol>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">script的位置是否影响首屏显示时间</h3>
+		<ol class="answer">
+			<li>在解析HTML生成DOM过程中，js文件的下载是并行的，不需要DOM处理到script节点，因此script的位置不影响首屏显示的开始时间；</li>
+			<li>浏览器解析HTML是自上而下的线性过程，script作为HTML的一部分同样遵循这个原则；</li>
+			<li>因此，script会延迟DomContentLoad，只显示其上部分首屏内容，从而影响首屏显示的完成时间。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">如何最小化重绘（repaint）和回流（reflow）</h3>
+		<ol class="answer">
+			<li>需要对元素进行复杂操作时，可以先隐藏（display: none;），操作完后再显示；</li>
+			<li>需要创建多个DOM节点时，使用DocumentFragment创建完后一次性的加入document；</li>
+			<li>缓存layout属性值，如：var left = ele.iffsetLeft;这样多次使用left只产生一次回流；</li>
+			<li>尽量避免用table布局（table元素一旦触发回流就会导致table其他元素回流）</li>
+			<li>避免使用css表达式，因为每次调用都会重新计算值（包括加载页面）</li>
+			<li>尽量使用css属性简写，如用哪个border代替border-width、border-style等</li>
+			<li>批量修改元素样式：ele.className 和 ele.style.cssText代替 ele.style.xxx</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">重绘（repaint）和回流（reflow）的区别</h3>
+		<ol class="answer">
+			<li>重绘：当渲染树中的元素外观（如颜色等）发生改变，不影响布局时，产生重绘；</li>
+			<li>回流：当渲染树中的元素的布局（如尺寸、位置等）发生改变时，产生重绘回流；</li>
+			<li>注意：js获取layout属性值（如：offsetLeft、scrollTop、getComputedStyle等）也会引起回流，因为浏览器需要通过回流计算最新值；</li>
+			<li>回流必将引起重绘，重绘不一定会引起回流。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">DOM树和渲染树的区别</h3>
+		<ol class="answer">
+			<li>DOM树与HTML标签一一对应，包括head和隐藏元素</li>
+			<li>渲染树不包括head和隐藏元素，大段文本在每行都是独立节点，每个节点都有对应的css属性</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">浏览器的渲染过程？</h3>
+		<ol class="answer">
+			<li>解析HTML构建DOM，并行请求CSS/IMG/JS</li>
+			<li>CSS文件下载完成，开始构建CSSOM</li>
+			<li>CSSOM构建结束后，和DOM一起生成Render Tree（渲染树）</li>
+			<li>布局（layout）：计算出每个节点在屏幕中的位置</li>
+			<li>显示（painting）：通过显卡把页面画到屏幕上</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">如何编写高性能的JavaScript代码</h3>
+		<ol class="answer">
+			<li>遵循严格模式：'"use strict";'</li>
+			<li>将js脚本放在页面底部，加快渲染页面</li>
+			<li>将js脚本成组打包，减少请求</li>
+			<li>使用非阻塞方式下载js脚本</li>
+			<li>尽量使用局部变量来保存全局变量</li>
+			<li>尽量减少使用闭包</li>
+			<li>使用window对象属性方法时，省略window</li>
+			<li>尽量减少对象成员嵌套</li>
+			<li>缓存DOM节点的访问</li>
+			<li>通过避免使用eval()和Function()构造器</li>
+			<li>给setTimeout()和setInterval()传递函数而不是字符串作为参数</li>
+			<li>尽量使用直接量创建对象和数组</li>
+			<li>最小化重绘（repaint）和回流（reflow）</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">JavaScript的编写基本规范</h3>
+		<ol class="answer">
+			<li>代码缩进，建议为四个空格</li>
+			<li>代码段使用花括号{}包裹</li>
+			<li>语句结束使用分号</li>
+			<li>变量和函数在使用前进行声明</li>
+			<li>以大写字母开头命名构造函数，全大写命名常量</li>
+			<li>规范定义JSON对象，补全双引号</li>
+			<li>用{}声明对象，用[]声明数组</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">JavaScript的组成：</h3>
+		<ol class="answer">
+			<li>ECMAScript（核心）：JavaScript语言基础；</li>
+			<li>DOM（文档对象模型）：规定了访问HTML和XML的接口；</li>
+			<li>BOM（浏览器对象模型）：提供了浏览器窗口之间进行交互的对象和方法。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">js的基本数据类型和引用数据类型</h3>
+		<ol class="answer">
+			<li>基本数据类型：number、string、null、Boolean、undefined、symbol</li>
+			<li>引用数据类型：object、Array、function</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">检测浏览器版本方法？</h3>
+		<ol class="answer">
+			<li>根据navigator.userAgent、UA.toLowerCase().indexOf('chrome')</li>
+			<li>根据window对象的成员// 'ActiveXObject' in window</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">js内置对象</h3>
+		<ol class="answer">
+			<li>数据封装类对象：Object、Array、Boolean、Number、String</li>
+			<li>其他对象：Function、Arguments、Math、Date、RegExp、Error</li>
+			<li>ES6新增对象：Symbol、Map、Set、Promises、Proxy、Reflect</li>
+		</ol>
+	</div>
+
+
+	<h1>CSS部分</h1>
+	<div class="part">
+		<h3 class="question">display:none;与visibility:hidden;的区别</h3>
+		<ol class="answer">
+			<li>都是让元素不可见</li>
+			<li>display:none;会让元素完全从渲染树中消失，渲染的时候不占据任何空间；visibility:hidden;不会让元素从渲染树中消失，元素继续占据空间，只是内容不可见。</li>
+			<li>display:none;是非继承属性，子孙节点消失是由于元素从渲染树消失造成，通过修改子孙节点属性无法显示；visibility:hidden;是继承属性，子孙节点消失是由于继承了hidden，通过设置visibility:visible;可以让子孙节点显示。</li>
+			<li>修改常规流中元素的display通常会造成文档重排；visibility:hidden;只是造成对应元素的重绘；</li>
+			<li>读屏器不会读取display:none;元素内容；会读取visibility:hidden;元素内容。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">css hack原理及常用hack</h3>
+		<ol class="answer">
+			<li>原理：利用不同浏览器对css的支持和解析结果不一样编写针对特定浏览器的样式；</li>
+			<li>
+				常用hack：
+				<ol>
+					<li>属性hack</li>
+					<li>选择器hack</li>
+					<li>IE条件注释</li>
+				</ol>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">css有哪些继承属性</h3>
+		<ol class="answer">
+			<li>
+				font：
+				<ol>
+					<li>word-break</li>
+					<li>letter-spacing</li>
+					<li>text-align</li>
+					<li>text-rendering</li>
+					<li>word-spacing</li>
+					<li>white-space</li>
+					<li>text-indent</li>
+					<li>text-transform</li>
+					<li>text-shadow</li>
+				</ol>
+			</li>
+			<li>line-height</li>
+			<li>color</li>
+			<li>visibility</li>
+			<li>cursor</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">标准的css的盒子模型？低版本IE的盒子模型有什么不同？</h3>
+		<ol class="answer">
+			<li>有两种：IE盒子模型，W3C盒子模型</li>
+			<li>盒子模型：内容（content）、内边距（padding）、边框（border）、外边距（margin）</li>
+			<li>区别：IE的内容（content）部分把内边距（padding）和边框（border）算进去了</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">css选择符有哪些？</h3>
+		<ol class="answer">
+			<li>id选择器</li>
+			<li>类选择器</li>
+			<li>标签选择器</li>
+			<li>相邻选择器</li>
+			<li>字选择器</li>
+			<li>后代选择器</li>
+			<li>通配符选择器</li>
+			<li>属性选择器</li>
+			<li>伪类选择器</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">css优先级算法</h3>
+		<ol class="answer">
+			<li>优先级就近原则，同权重情况下样式定义最近者为准</li>
+			<li>载入样式以最后载入的定位为准</li>
+			<li>!important为任何形式最高级</li>
+			<li>优先级：!important > id > class > tag</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">css3新增伪类有哪些</h3>
+		<ol class="answer">
+			<li>p:first-of-type：选择属于其父元素的首个p元素</li>
+			<li>p:last-of-type：选择属于其父元素的最后一个p元素</li>
+			<li>p:only-of-type：选择属于其父元素的唯一元素</li>
+			<li>p:only-child：选择属于其父元素的唯一元素</li>
+			<li>p:nth-child(n)：选择属于其父元素的第n个元素（以1开始）</li>
+			<li>:after：在元素后添加内容，也可以用来清除浮动</li>
+			<li>:before：在元素之前添加内容</li>
+			<li>:disabled：控制表单控件的禁用状态</li>
+			<li>:checked：单选框或者复选框被选中</li>
+		</ol>
+	</div>	
+	<div class="part">
+		<h3 class="question">如何居中div</h3>
+		<ol class="answer">
+			<li>
+				确定宽度，水平居中：
+				div{width:200px;margin:auto;}
+			</li>
+			<li>
+				确定宽高，水平垂直居中：
+				<pre>
+	div{
+		width:200px;
+		height:200px;
+		position:relative;
+		top:50%;
+		margin-top:-100px;
+		left:50%;
+		margin-left:-100px;
+	}	
+				</pre>
+			</li>
+			<li>
+				确定宽高，水平垂直居中：
+				<pre>
+	div.outerDiv{
+		position: relative;
+		width: 400px;
+		height: 200px;
+		background: #ff0000;
+	}
+	div.innerDiv{
+		position: absolute;
+		margin: auto;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 200px;
+		height: 100px;
+		background: #ffff00;
+	}
+				</pre>
+			</li>
+			<li>
+				不确定宽高，撑满带relative的父元素：
+				<pre>
+	div.outerDiv{
+		position: relative;
+	}
+	div.innerDiv{
+		position: absolute;
+		margin: auto;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+				</pre>
+			</li>
+		</ol>
+	</div>	
+	<div class="part">
+		<h3 class="question">display的值有哪些？什么作用</h3>
+		<ol class="answer">
+			<li>block：像块类型元素一样渲染和显示；</li>
+			<li>none：缺省值，元素不渲染不显示</li>
+			<li>inline-block：内联元素一样显示，块级元素一样渲染</li>
+			<li>inline：内联元素一样渲染和显示</li>
+			<li>list-item：块级元素一样渲染显示，并添加样式列表标记</li>
+			<li>table：块级表格渲染显示</li>
+			<li>inherit：继承父元素display属性值</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">inline和inline-block的区别</h3>
+		<ol class="answer">
+			<li>inline：内联元素，width、height、margin-top、margin-bottom、padding-top、padding-bottom设置无效，但margin和padding的水平方向上的left和right设置有效</li>
+			<li>inline-block：内联元素一样显示，但是具有完整的block的属性</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">position的定位原点？</h3>
+		<ol class="answer">
+			<li>relative：相对定位，相对于正常位置进行定位；</li>
+			<li>absolute：绝对定位，相对于第一个position值不为static的父元素</li>
+			<li>fixe：绝对定位，相对于浏览器窗口进行定位；</li>
+			<li>static：默认值，没有定位，元素出现在正常的流中</li>
+			<li>inherit：规定从父元素继承position属性值</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">css3有哪些新特性？</h3>
+		<ol class="answer">
+			<li>新增各种css选择器</li>
+			<li>圆角（border-radius）</li>
+			<li>多列布局（multi-column layout）</li>
+			<li>阴影和反射（shadow、reflect）</li>
+			<li>文字特效（text-shadow）</li>
+			<li>文字渲染（text-decoration）</li>
+			<li>线性渐变（gradient）</li>
+			<li>旋转（transform）</li>
+			<li>缩放、定位、倾斜、动画、多背景</li>
+			<li>transform:\scale(0.85,0.90)\translate(0px,-30px)\skew(-9deg,0deg)\animation</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">css创建一个三角形</h3>
+		<ol class="answer">
+			<li>
+				<pre>
+	.trangle{
+		width: 0;
+		height: 0;
+		border: 25px solid transparent;
+		border-top: 50px solid #ffff00;
+	}
+				</pre>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">移除inline-block元素间的间隔</h3>
+		<ol class="answer">
+			<li>方法一：html中将inline-block元素连起来，不要换行；</li>
+			<li>方法二：html中inline-block元素不要结束标签（最后一个元素保留）；</li>
+			<li>方法三：父元素使用<code>font-size:0;-webkit-text-size-adjust:none;</code>，大部分浏览器能解决问题；</li>
+			<li>方法四：父元素使用 <code>letter-spacing:-3px;</code>，子元素使用 <code>letter-spacing:0;</code></li>
+			<li>方法五：父元素使用 <code>word-spacing:-6px;diplay:inline-table;</code>，子元素使用 <code>word-spacing:0;</code></li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">遇到的浏览器兼容性问题</h3>
+		<ol class="answer">
+			<li>png24位的图片在IE6浏览器上出现背景，解决方案是做成png8位；</li>
+			<li>浏览器默认的margin和padding不一样，解决方案是设一个全局的样式<code>*{margin:0;padding:0;}</code></li>
+			<li>IE下，可以使用常规属性的方法来获取自定义属性，也可以使用 <code>getAttribute()</code>获取自定义属性；</li>
+			<li>Firefox下，只能使用<code>getAttribute()</code>获取自定义属性；</li>
+			<li>IE下，event对象有，但是没有；</li>
+			<li>Firefox下，event对象有pageX、pageY属性，没有x、y属性；</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">为什么要初始化css样式</h3>
+		<ol class="answer">
+			<li>因为浏览器的兼容问，不同浏览器对有些标签的默认值是不同的，如果没有对css初始化，往往会出现浏览器之间的显示差异</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">css属性content作用？</h3>
+		<ol class="answer">
+			<li>content属性专门应用在before、after伪元素上，用于插入额外内容或样式</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">css3的flexbox（弹性盒布局模型）及应用场景</h3>
+		<ol class="answer">
+			<li>flexbox用于不同尺寸屏幕中创建可自动扩展和收缩布局。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">常见js兼容性问题</h3>
+		<ol class="answer">
+			<li>获取元素当前的样式：getComputedStyle(el,null).key VS el.currentStyle.key</li>
+			<li>事件对象：e VS window.event</li>
+			<li>鼠标坐标：e.pageX，e.pageY VS window.event.x，window.event.y</li>
+			<li>按键码：e.which VS event.keyCode</li>
+			<li>文本节点：el.textContent VS el.innerText</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">px和em的区别</h3>
+		<ol class="answer">
+			<li>px：相对于显示器屏幕分辨率，无法用浏览器字体放大功能；</li>
+			<li>em：值并不固定，会继承父元素的字体大小，em = 像素值/父元素font-size</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">浮动定义，原理，问题，清除方式</h3>
+		<ol class="answer">
+			<li>定义：非IE下，容器不设高度且子元素浮动时，容器高度不能被内容撑开，此时内容会溢出到容器外面而影响布局，这种现象称为浮动。</li>
+			<li>原理：浮动元素脱离文档流，不占据空间（引起高度塌陷现象）。浮动元素碰到包含它的边框或者其他元素的边框会停留。</li>
+			<li>问题：引起高度塌陷，父元素高度无法撑开，影响布局；</li>
+			<li>元素设置浮动后，该元素的display值会自动变为block；</li>
+			<li>
+				清除浮动：
+				<ol>
+					<li>浮动元素后添加额外块级标签，并设置样式 <code>clear:both</code></li>
+					<li>浮动元素后设置<code>&lt;br clear="all" /&gt;</code></li>
+					<li>父元素设置<code>overflow:hidden;</code></li>
+					<li>使用:after伪元素设置样式<code>clear:both</code></li>
+				</ol>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">css优化，提高性能的方法</h3>
+		<ol class="answer">
+			<li>多个css合并，减少HTTP请求</li>
+			<li>将css文件放在页面最上面</li>
+			<li>移除空的css规则</li>
+			<li>编码使用css表达式</li>
+			<li>选择器优化嵌套，避免层级过深</li>
+			<li>充分利用css继承属性，减少代码量</li>
+			<li>抽象提取公共样式，减少代码量</li>
+			<li>属性值为0时，不加单位</li>
+			<li>属性值小于1大于0时，省略小数点前面的0</li>
+			<li>css雪碧图：多个小图片合并到一个图片中，减少请求数量（使用具有一定的局限性）</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">浏览器解析css选择器的顺序</h3>
+		<ol class="answer">
+			<li>从上到下，从右到左</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">元素竖向的百分比设定是相对于容器的高度吗？</h3>
+		<ol class="answer">
+			<li>元素竖向的百分比设定是相对于容器的宽度（适用属性为：margin和padding的top和bottom属性，不是height）</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">父元素与子元素之间的margin-top问题(css hack)</h3>
+		<ol class="answer">
+			<li>父元素设置<code>overflow:hidden;</code>（最佳方案）</li>
+			<li>父元素设置padding，如<code>padding-top: 1px;</code></li>
+			<li>父元素设置透明border，效果同上，如<code>border-top: 1px solid transparent;</code></li>
+			<li>子元素设置浮动</li>
+			<li>声明定位</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">全屏滚动原理</h3>
+		<ol class="answer">
+			<li>类似图片轮播原理，超出隐藏部分，滚动时显示</li>
+			<li>可能用到的css属性：<code>overflow:hidden;transform: translate(100%);</code></li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">什么是响应式设计？基本原理是什么？如何兼容低版本的IE？</h3>
+		<ol class="answer">
+			<li>响应式设计师网站能够兼容多个不同分辨率的终端，而不是为每个终端设计一个版本；</li>
+			<li>基本原理是利用css3媒体查询，为不同尺寸的设备适配不同样式；</li>
+			<li>
+				对于低版本的IE，可采用js获取屏幕宽度，然后通过resize方法来实现兼容。
+				<pre>
+	$(window).resize(function(){
+		screenRespond();
+	});
+	screenRespond();
+	function screenRespond(){
+		var screenWidth = $(window).width();
+		if (screenWidth <= 1800) {
+			$(body).attr('class','w1800');
+		}
+		if (screenWidth <= 1400) {
+			$(body).attr('class','w1400');
+		}
+		if (screenWidth > 1800) {
+			$(body).attr('class','');
+		}
+	}
+				</pre>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">什么是视差滚动效果，如何给每页做不同的动画？</h3>
+		<ol class="answer">
+			<li>视差滚动时指多层背景以不同的速度移动，形成立体的运动效果，具有非常出色的视觉体验。</li>
+			<li>一般把网页解剖为：背景层，内容层和悬浮层。当滚动鼠标滚轮时，各图层以不同速度移动，形成视差的效果。</li>
+			<li>
+				实现方法：
+				<ol>
+					<li>以页面滚动条作为视差动画进度条；</li>
+					<li>以滚轮刻度作为动画帧度来播放动画；</li>
+					<li>监听mousewheel时间，事件被触发即播放动画，实现翻页效果</li>
+				</ol>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">a标签上四个伪类的执行顺序是？</h3>
+		<ol class="answer">
+			<li>link > visited > hover > active</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">伪类和伪元素的区别和作用？</h3>
+		<ol class="answer">
+			<li>
+				伪元素：在内容元素的前后插入额外的元素或样式，但是这些元素实际上并不在意文档中生成。
+				<pre>
+	p::before{content:"第一章：";}
+	p::after{content:"结束";}
+	p::first-line{background: red;}
+				</pre>
+			</li>
+			<li>
+				伪类：将特殊的效果添加到特定选择器上，是已有元素上添加类别，不会产生新的元素。
+				<pre>
+	a:hover{color:#ff00ff;}
+	p:first-child{color:red;}
+				</pre>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">::before和:after中双冒号和单冒号的区别？</h3>
+		<ol class="answer">
+			<li>在css中伪类一直用单冒号表示；</li>
+			<li>伪元素在css1中已存在，当时语法是用单冒号表示；</li>
+			<li>由于低版本IE对双冒号不兼容，开发者为了兼容各浏览器，继续使用单冒号表示伪元素；</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">如何修改Chrome记住密码后自动填充表单的黄色背景？</h3>
+		<ol class="answer">
+			<li>产生原因：由于Chrome默认会给自动填充的input表单加上input:-webkit-autofill私有属性造成的。</li>
+			<li>解决方案1：在form标签上直接关闭表单的自动填充：autocomplete = "off"；</li>
+			<li>解决方案2：表单添加样式：input:-webkit-autofill{background-color:transparent;}</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">网站图片文件，如何点击下载而不是点击预览？</h3>
+		<ol class="answer">
+			<li>&lt;a href="logo.jpg" download&gt;下载&lt;/a&gt;</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">对line-height的理解</h3>
+		<ol class="answer">
+			<li>line-height是指一行字的高度，包含字间距，实际上是下一行基线到上一行基线的距离；</li>
+			<li>如果一个表情没有定义height属性，那么其最终表现的高度是由line-height决定的；</li>
+			<li>一个容器没有设置高度，MAME撑开容器高度的是line-height而不是容器内文字内容；</li>
+			<li>把line-height值设置为height一样的值可以实现单行文字的垂直居中；</li>
+			<li>line-height和height都能撑开一个高度，height会触发haslayout，而line-height不会</li>
+			<li>
+				line-height的赋值方式：
+				<ol>
+					<li>带单位：px是固定值，而em会参考父元素font-size值计算自身的行高；</li>
+					<li>纯数字：会把比例传递给后代，如父元素行高1.5，子元素字体为18px，则子元素行高为1.5*18 = 27px；</li>
+					<li>百分比：将计算后的值传递给后代；</li>
+				</ol>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">让IOS手机浏览器字体齿轮变清晰变细？</h3>
+		<ol class="answer">
+			<li>-webkit-font-smoothing:antialiased;</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">font-style属性oblique是什么意思？</h3>
+		<ol class="answer">
+			<li>使每一italic属性的文字实现倾斜</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">如果需要手动写动画，最小时间间隔是多少？</h3>
+		<ol class="answer">
+			<li>16.7ms：多数显示器默认频率是60Hz，即1秒刷新60次，所以理论上最小间隔为：1s/60*1000 = 16.7ms。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">overflow:scroll;时不能平滑滚动的问题怎么处理？</h3>
+		<ol class="answer">
+			<li>监听滚轮事件，然后滚动到一定距离时，用jQuery的animate实现平滑效果。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">一个高度自适应的div，里面两个div，一个高度100；希望另一个天猫剩下的高度</h3>
+		<ol class="answer">
+			<li>方案1：.container{position:relative;}  .sub{position:absolute;top:100px;bottom:0;}(最佳)</li>
+			<li>方案2：.sub{height:calc(100%-100px);}</li>
+			<li>方案3：.container{display:flex;flex-direction:column;}  .sub{flex:1}</li>
+		</ol>
+	</div>
+
+
+
+	<h1>HTML部分</h1>
+	<div class="part">
+		<h3 class="question">HTML5的form如何关闭自动完成功能</h3>
+		<ol class="answer">
+			<li>给不想要提示的form或某个input设置为autocomplete=off</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">如何实现浏览器内多个标签页之间的通信？</h3>
+		<ol class="answer">
+			<li>WebSocket</li>
+			<li>SharedWorker</li>
+			<li>调用localStorage、cookies等本地存储方式</li>
+			<li>iframe + contentWindow</li>
+			<li>postMessage</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">WebSocket如何兼容低浏览器</h3>
+		<ol class="answer">
+			<li>Adobe Flash Socket</li>
+			<li>ActiveX HTMLFile（IE）</li>
+			<li>基于multipart编码发送XHR</li>
+			<li>基于长轮询的XHR</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">页面可见性（Page Visibility API）用途</h3>
+		<ol class="answer">
+			<li>通过visibilityState的值检测页面当前是否可见，以及打开网页的时间等</li>
+			<li>在页面被切换到其他后台进程的时候，自动暂停音乐或视频的播放</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">如何在页面上实现一个圆形的可点击区域</h3>
+		<ol class="answer">
+			<li>map+area或者svg</li>
+			<li>border-radius</li>
+			<li>js实现，需要求一个点在不在圆上简单算法、获取鼠标坐标等</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">实现不适用border画出1px高的险，在不同浏览器的标准模式与怪异模式下都能保持一致的效果</h3>
+		<ol class="answer">
+			<li>.line{width: 60%;margin: 10px;height: 1px;background: #000;}</li>
+		</ol>
+		<div class="line"></div>
+	</div>
+	<div class="part">
+		<h3 class="question">网页验证码是什么，是为了解决什么安全问题</h3>
+		<ol class="answer">
+			<li>区分用户是计算机还是人的公共全自动程序，可以防止恶意破解密码、刷屏、论坛灌水；</li>
+			<li>有效防止黑客对某一个特定注册用户用特定程序暴力破解方式进行不断的登录尝试</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">title和h1的区别、b和strong的区别、i和em的区别</h3>
+		<ol class="answer">
+			<li>title属性没有明确意义，只是表示个标题、h1则表示层次明确的标题，对页面信息的抓取有很大的影响；</li>
+			<li>strong是标明重点内容，有语气加强的含义，使用阅读设备阅读网络文字是，会重读。而b是强调展示内容；</li>
+			<li>i 的内容展示位斜体、em表示强调的文本。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">页面导入样式时，使用link和@import有什么区别</h3>
+		<ol class="answer">
+			<li>link属于HTML标签，除了加载css外，还能用于定RSS等，@import只能用于加载css；</li>
+			<li>页面加载是，link会同时被加载，@import引用的css会等页面加载完后再加载</li>
+			<li>@import只在IE5以上才能被识别，而link是HTML标签，无兼容问题。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">浏览器内核的理解</h3>
+		<ol class="answer">
+			<li>浏览器内核主要分为两部分：渲染引擎（layout engineer）和JS引擎（Rendering Engine）；</li>
+			<li>渲染引擎负责取得网页的内容进行布局计算和样式渲染，然后输出到显示器或者打印机；</li>
+			<li>JS引擎负责解析和执行js脚本来实现网页的动态效果和用户交互；</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">浏览器内核有哪些</h3>
+		<ol class="answer">
+			<li>Blink：新版Chrome、新版Opera</li>
+			<li>Webkit：Safari、原Chrome</li>
+			<li>Gecko：Firefox、Netscape6及以上</li>
+			<li>Presto：原Opera7及以上</li>
+			<li>Trident：IE、国产浏览器</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">HTML5新增特性</h3>
+		<ol class="answer">
+			<li>新增选择器：document.querySelector、document.querySelectorAll</li>
+			<li>拖拽释放（Drag and Drop）API</li>
+			<li>媒体播放器：video（视频）和audio（音频）</li>
+			<li>本地存储：localStorage和sessionStorage</li>
+			<li>离线应用：manifest</li>
+			<li>桌面通知：Notifications</li>
+			<li>语义化标签：article、header、footer、nav、section等</li>
+			<li>增强表单控件：calenda、date、time、email、url、search</li>
+			<li>地理位置：Geolocation</li>
+			<li>多任务：webworker</li>
+			<li>全双工通信协议：websocket</li>
+			<li>历史管理：history</li>
+			<li>跨域资源共享（CORS）：Access-Control-Allow-Origin</li>
+			<li>页面可见性改变事件：visibilitychange</li>
+			<li>跨窗口通信：PostMessage</li>
+			<li>Form Data对象</li>
+			<li>绘画：canvas</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">如何处理HTML5新标签的浏览器兼容问题</h3>
+		<ol class="answer">
+			<li>通过document.createElement创建新标签</li>
+			<li>使用框架html5shiv.js</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">如何区分HTML和HTML5</h3>
+		<ol class="answer">
+			<li>DOCTYPE声明</li>
+			<li>新增的结构元素</li>
+			<li>功能元素</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">HTML5的离线存储工作原理及使用</h3>
+		<ol class="answer">
+			<li>原理：用户在线时，保存更新用户机器上的缓存文件；用户离线时，可以正常访问离线存储站点或应用内容</li>
+			<li>
+				使用方式：
+				<ol>
+					<li>在文档的html标签设置manifest属性，如manifest="/xxx.appcache"；</li>
+					<li>在项目中新建manifest文件，manifest文件的命名建议为：xxx.appcache</li>
+					<li>在web服务器配置正确的MIME-type，即text/cache-manifest</li>
+				</ol>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">浏览器怎么对HTML5 的离线存储资源进行管理和加载的</h3>
+		<ol class="answer">
+			<li>在线的情况下，浏览器发现html标签有manifest属性，他会请求manifest文件；</li>
+			<li>如果是第一次访问app，浏览器会根据manifest文件的内容下载相应的资源并且进行离线存储；</li>
+			<li>如果已经访问过app且资源已经离线存储了，浏览器会对比新的manifest文件与旧的manifest文件，如果文件没有发生改变，就不做任何操作，如果文件变了，就会重新下载文件中的资源并进行离线存储；</li>
+			<li>离线情况下，浏览器直接使用离线存储的资源。</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">iframe的优缺点</h3>
+		<ol class="answer">
+			<li>
+				优点：
+				<ol>
+					<li>用来加载速度较慢的内容（如广告）</li>
+					<li>可以使用脚本并行下载</li>
+					<li>可以实现跨子域通信</li>
+				</ol>
+			</li>
+			<li>
+				缺点：
+				<ol>
+					<li>会阻塞主页面的onload事件</li>
+					<li>无法被一些搜索引擎识别</li>
+					<li>会产生很多页面，不容易管理</li>
+				</ol>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">label的作用和使用</h3>
+		<ol class="answer">
+			<li>作用：当用户选择label标签时，浏览器会自动将焦点转到和label标签相关的表单控件上</li>
+			<li>使用方法：input放在label里面，即可使用；input放在label外面，label的for属性对应input的id</li>
+		</ol>
+	</div>
+	
+
+	
+<script type="text/javascript" src="js/mianshi.js"></script>
+</body>
+</html>
