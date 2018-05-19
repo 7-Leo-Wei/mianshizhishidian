@@ -27,3 +27,16 @@
 	height: 1px;
 	background: #000;
 }
+.t_readyState{
+	background: #777;
+	width: 100%;
+}
+.t_readyState tr th{
+	background: #3399ff;
+	color: #fff;
+	text-align: center;
+}
+.t_readyState tr td{
+	background: #fff;
+	text-align: center;
+}

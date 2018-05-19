@@ -434,6 +434,167 @@
 	<div class="part">
 		<h3 class="question">什么是AJAX？</h3>
 		<ol class="answer">
+			<li>AJAX：Asynchronous JavaScript and XML（异步的JavaScript和XML），是一种用于创建快速动态网页的技术；</li>
+			<li>最大的优点：是在不重新加载整个页面的情况下，可以与服务器交换数据并更新部分网页内容。</li>
+			<li>AJAX不需要任何浏览器插件，但需要用户允许JavaScript在浏览器上执行。</li>
+			<li>
+				<p>AJAX工作原理；</p>
+				<ol>
+					<li>
+						<p>浏览器端：</p>
+						<ul>
+							<li>一个事件发生；</li>
+							<li>创建一个XMLHttpRequest对象</li>
+							<li>发送这个HttpRequest请求</li>
+						</ul>
+					</li>
+					<li>Internet传输</li>
+					<li>
+						<p>服务器端：</p>
+						<ul>
+							<li>响应HttpRequest请求；</li>
+							<li>创建一个回应并发送数据到浏览器；</li>
+						</ul>
+					</li>
+					<li>Internet传输</li>
+					<li>
+						<p>浏览器端：</p>
+						<ul>
+							<li>使用JavaScript响应服务器返回的数据</li>
+							<li>页面内容更新</li>
+						</ul>
+					</li>
+				</ol>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">什么是XMLHttpRequest？</h3>
+		<ol class="answer">
+			<li>XMLHttpRequest对象提供了对HTTP协议的完全访问，包括做出POST和HEAD请求以及普通的GET请求的能力；</li>
+			<li>XMLHttpRequest可以同步或异步地返回web服务器的响应，并且能够以文本或者一个DOM文档的形式返回内容；</li>
+			<li>XMLHttpRequest可以接收任何形式的文本文档；</li>
+			<li>IE7及以上现代浏览器均支持XMLHttpRequest；</li>
+			<li>
+				<h4>属性</h4>
+				<ol>
+					<li>
+						<p><b><i>readyState</i></b>：HTTP请求的状态，当一个XMLHttpRequest初次创建时，这个属性的值从0开始，知道接收到完整的HTTP响应，这个值增加到4；</p>
+						<table cellspacing="1" class="t_readyState">
+							<tr>
+								<th>状态</th>
+								<th>名称</th>
+								<th>描述</th>
+							</tr>
+							<tr>
+								<td>0</td>
+								<td>Uninitialized</td>
+								<td>初始化状态，XMLHttpRequest对象已创建或已被abort()方法重置</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>Open</td>
+								<td>open()方法已调用，但是send()方法未调用，请求还没有被发送</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Sent</td>
+								<td>send()方法已调用，HTTP请求已发送到web服务器，未接收到响应</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>Receiving</td>
+								<td>所有响应头部都已经接收到，响应体开始接收但未完成</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>Loaded</td>
+								<td>HTTP响应已经完全接收</td>
+							</tr>
+						</table>
+					</li>
+					<li>
+						<p><b><i>responseText</i></b>：目前为止为服务器接收到的响应体（不包括头部），或者如果还没有接收到数据的话，就是空字符串；</p>
+						<p>如果readyState小于3，这个属性就是一个空字符串，当readyState为3，这个属性返回目前已经接收到的响应部分，如果readyState为4，这个属性保存了完整的响应体；</p>
+						<p>如果响应包含了为响应体指定字符编码的头部，就使用该编码，否则假定使用Unicode UTF-8。</p>
+					</li>
+					<li>
+						<p><b><i>responseXML</i></b>：对请求的响应，解析为XML并作为 <i>Document对象</i> 返回</p>
+					</li>
+					<li>
+						<p><b><i>status</i></b>：由服务器返回的HTTP状态代码，如200表示成功，而404表示 <i>Not Found</i> 错误，当readyState小于3时，读取这一个属性会导致一个异常。</p>
+					</li>
+					<li>
+						<p><b><i>statusText</i></b>：这个属性用名称而不是数字指定了请求的HTTP的状态代码，也就是说，当状态为200时，他是 <i>OK</i> ，当状态为404时它是 <i>Not Found</i> 。和status属性一样，当readyState小于3时，读取这个属性会导致一个异常。</p>
+					</li>
+				</ol>
+			</li>
+			<li>事件句柄：<b><i>onreadystatechange</i></b>——每次readyState属性改变的时候调用的事件句柄函数，当readyState为3时，可能调用多次。</li>
+			<li>
+				<h4>方法</h4>
+				<ol>
+					<li>
+						<h5><i>abort()</i></h5>
+						<p>取消当前响应，关闭连接并且结束任何未决的网络活动；</p>
+						<p>这个方法把XMLHttpRequest对象重置为readyState为0的状态，并且取消所有未决的网络活动。</p>
+						<p>如果请求用了太长时间，而且响应不再必要的时候，可以调用这个方法。</p>
+					</li>
+					<li>
+						<h5><i>getAllResponseHeader()</i></h5>
+						<p>把HTTP响应头部作为未解析的字符串返回；</p>
+						<p>如果readyState小于3，这个方法返回null，否则，它返回服务器发送的所有HTTP响应的头部。头部作为单个的字符串返回，一行一个头部，每行用换行符“\r\n”隔开。</p>
+					</li>
+					<li>
+						<h5><i>getResponseHeader()</i></h5>
+						<p>返回指定的HTTP响应头部的值，其参数是要返回的HTTP响应头部的名称，可以使用任何大小写来指定这个头部名字，和享有不的比较时不区分大小写的。</p>
+						<p>该方法的返回值是指定的HTTP响应头部的值，如果没有接收到这个头部或者readyState小于3则为空字符串，如果接收到多个有指定名称的头部，这个头部的值被连接起来并返回，使用逗号和空格分隔开各个头部的值。</p>
+					</li>
+					<li>
+						<h5><i>open(method, url, async, username, password)</i></h5>
+						<p>初始化HTTP请求参数，例如URL和HTTP方法，但是并不发送请求。</p>
+						<p>method参数是用于请求的HTTP方法，值包括GET、POST和HEAD。</p>
+						<p>url参数是请求的主体，大多数浏览器实施了一个同源安全策略，并且要求这个url与包含脚本的文本具有相同的主机名和端口。</p>
+						<p>async参数指示请求使用应该异步地执行，如果这个参数是false，请求是同步的，后续对send()的调用将阻塞，知道响应完全接收。如果这个参数是true或省略，请求是异步的，且通常需要一个onreadystatechange事件句柄；</p>
+						<p>username和password参数是可选的，为url所需的授权提供认证资格，如果指定了，它们会覆盖url自己指定的任何资格。</p>
+					</li>
+					<li>
+						<h5><i>send(body)</i></h5>
+						<p>发送HTTP请求，使用传递给open()方法的参数，以及传递给该方法的可选请求体。</p>
+						<p>如果通过调用open()指定的HTTP方法是POST或GET，body参数指定了请求体，作为一个字符串或者Document对象。如果请求体不是必须的话，这个参数就是null，对于任何其他方法，这个参数是不可用的，应该为null。</p>
+						<p>这个方法导致一个HTTP请求发送，如果之前没有调用open()，或者更具体地说，如果readyState不是1，send()抛出一个异常，否则它发送一个HTTP请求，该请求由一下几部分组成：
+							<ul>
+								<li>之前调用open()时指定的HTTP方法、URL以及认证资格</li>
+								<li>之前调用setRequestHeader()时指定的请求头部</li>
+								<li>传递给这个方法的body参数</li>
+							</ul>
+						</p>
+						<p>一旦请求发布了，readyState设置为2，并触发onreadystatechange事件句柄。</p>
+						<p>如果之前调用的open() 参数async为false，这个方法会阻塞并不会返回，知道readyState为4并且服务器的响应被完全接收。否则如果async参数为true，或者这个参数省略，send()立即返回，并且正如后面所介绍的，服务器响应将在一个后台线程中处理。 </p>
+					</li>
+					<li>
+						<h5><i>setRequestHeader(name, value)</i></h5>
+						<p>向一个打开但是未发送的请求设置或添加一个HTTP请求，它应该包含在通过后续send()调用而发布的请求中，这个方法只有当readyState为1时才能调用，也就是open()之后，send()之前。</p>
+						<p>有些请求头部由XMLHttpRequest自动设置而不是由这个方法设置，以符合HTTP协议，这包括如下和代理相关的头部：
+							<ol>
+								<li>Host</li>
+								<li>connection</li>
+								<li>Keep-Alive</li>
+								<li>Accept-charset</li>
+								<li>Accept-Encoding</li>
+								<li>If-Modified-Since</li>
+								<li>If-None-Match</li>
+								<li>If-Range</li>
+								<li>Range</li>
+							</ol>
+						</p>
+					</li>
+				</ol>
+			</li>
+		</ol>
+	</div>
+	<div class="part">
+		<h3 class="question">创建AJAX？</h3>
+		<ol class="answer">
 			<li>AJAX：asynchronous JavaScript and xml，异步JavaScript和xml在后台与服务器进行异步数据交换，不用重载整个页面，实现局部刷新。</li>
 			<li>
 				创建步骤：
