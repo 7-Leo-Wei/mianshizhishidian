@@ -1,6 +1,13 @@
 *{
 	font-family: "微软雅黑";
 }
+li i{
+	color: #ff66ff;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 0 4px 0 2px;
+}
 .part{
 	width: 80%;
 	border: 1px solid #66ffff;
@@ -13,13 +20,13 @@
 	color: #3399ff;
 }
 .part .answer{
-	display: none;
+	/*display: none;*/
 }
 .part .answer li{
 	line-height: 24px;
 }
 .part .answer li pre{
-	background: #e6e6e6;
+	background: #e5f7ff;
 }
 .line{
 	width: 60%;

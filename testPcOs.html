@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no, email=no">
+	<title>Document</title>
+<script type="text/javascript">
+var os = function() {  
+     var ua = navigator.userAgent,  
+     isChrome = /(?:Chrome|CriOS)/.test(ua),  
+     isChrPho = isChrome && /(?:Mobile)/.test(ua),
+     isFireFox = /(?:Firefox)/.test(ua),   
+     isWindowsPhone = /(?:Windows Phone)/.test(ua),  
+     isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone,   
+     isAndroid = !isChrome && !isFireFox && /(?:Android)/.test(ua),   
+     isTablet = /(?:iPad|PlayBook)/.test(ua) || (isAndroid && !/(?:Mobile)/.test(ua)) || (isFireFox && /(?:Tablet)/.test(ua)),  
+     isPhone = !isChrome && !isFireFox && /(?:iPhone)/.test(ua) && !isTablet,  
+     isPc = !isPhone && !isAndroid && !isSymbian;  
+     return {  
+          isChrome: isChrome,
+          isChrPho: isChrPho,
+          isFireFox: isFireFox,
+          isWindowsPhone: isWindowsPhone,
+          isSymbian: isSymbian,
+          isTablet: isTablet,  
+          isPhone: isPhone,  
+          isAndroid : isAndroid,  
+          ua : ua
+     };  
+}();  
+window.onload = function(){
+	var nvgtr = document.getElementById('nvgtr');
+	alert(os.ua);
+	if (os.isPhone || os.isAndroid || os.isWindowsPhone || os.isSymbian) {
+		if (os.isAndroid) {nvgtr.innerHTML='Android设备'}
+		else if (os.isPhone) {nvgtr.innerHTML='Phone设备'}
+		else if (os.isWindowsPhone) {nvgtr.innerHTML='WindowsPhone设备'}
+		else {nvgtr.innerHTML='诺基亚设备'}
+	}else if (os.isTablet) {
+		nvgtr.innerHTML='Tablet设备';
+	}else {
+		if (os.isChrPho) {nvgtr.innerHTML='chrome模拟移动端模式'}
+		else if (os.isChrome) {nvgtr.innerHTML='Chrome PC模式'}
+		else {nvgtr.innerHTML='FireFox'}
+	}
+}
+</script>
+</head>
+<body>
+	<p>您正在使用的浏览设备是<span id="nvgtr">未知设备</span></p>
+</body>
+</html>
